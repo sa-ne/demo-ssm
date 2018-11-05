@@ -1,5 +1,9 @@
 #!/bin/bash
 
+echo -e "
+   Cleaning up ...
+"
+
 ssm -f remove /mnt/ssm-test vg_ssm
 pvremove /dev/vdb1
 pvremove /dev/vdb2

@@ -24,4 +24,3 @@ echo -e "
 	# mount -t xfs /dev/vg_ssm/lv_ssm /mnt/ssm-test
 
 "
-
