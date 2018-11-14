@@ -1,22 +1,22 @@
 # demo-ssm
 Quick demo of System Storage Manager (SSM) capabilities
 
-System Storage Manager (SSM) -- Simplifies storage mgmt vs LVM  (1 step vs 5)
+System Storage Manager (SSM) -- provides a command line interface to manage storage in various technologies.  Allows knowledge and usage of one command syntax for multiple storage backends and filesystem types.  
 
-```pvcreate + vgcreate + lvcreate + mkfs + mount```
 
+
+### Installation
 **Not installed by default, RHEL 7 only, no RHEL 6 or lower**
 
 ```# yum install -y system-storage-manager```
 
-Create
+### Example: Create filesystem
 ```
 # ssm -f create --fstype xfs -p vg_ssm -n lv_ssm -s 400M /dev/vdb1 /dev/vdb2 /mnt/ssm-test
-# df -h /mnt/ssm-test
-# grep vg_ssm /proc/mounts>>/etc/fstab
 ```
 
-LVM equivalent:
+#### LVM equivalent:
+  * Simplifies storage mgmt vs LVM  (1 step vs 5+)
 ```
 # pvcreate /dev/vdb1
 # pvcreate /dev/vdb2
@@ -26,17 +26,17 @@ LVM equivalent:
 # mount -t xfs /dev/vg_ssm/lv_ssm /mnt/ssm-test
 ```
 
-Resize:
+### Example: Resize
 
 ```# ssm resize -s +50%FREE /dev/vg_ssm/lv_ssm```
 
-Destroy:
+### Example: Destroy
 ```
 # ssm -f remove /mnt/ssm-test vg_ssm
 # pvremove /dev/vdb1 /dev/vdb2
-Remove fstab entry
 ```
 
+### Other Examples
 Display information about all detected devices, pools, volumes, and snapshots:
 
 ```# ssm list```
@@ -47,8 +47,8 @@ Check (fsck):
 
 Syntax:
 ```
-# ssm create | resize 
---fstype xfs|ext4|ext3|btrfs 
+# ssm create | resize
+--fstype xfs|ext4|ext3|btrfs
 -s <size> Kk|Mm|Gg|Tt|Pp|Ee|+/-%’N’FREE/USED (also resize)
 -p vg name
 -n lv name
