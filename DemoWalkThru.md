@@ -1,8 +1,8 @@
 ## Demo WalkThru:
 
 ### Requirements
-* ** VM needs small (500MB) second disk (/dev/vdb) **
-* Minimum: 1vCPU x 1G mem
+* ** VM needs small (1GB) second disk (/dev/vdb) **
+* Minimum VM: 1vCPU x 1G mem
 
 ### WalkThru:
 * Setup via ssm-setup.sh
