@@ -1,4 +1,4 @@
-## Demo WalkThru:
+## SSM Demo WalkThru:
 
 ### Requirements
 * ** VM needs small (1GB) second disk (/dev/vdb) **
