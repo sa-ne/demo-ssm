@@ -13,11 +13,11 @@
   * Talk thru LVM steps (1 vs 5+)
 * Show partitions
 ```
-# fdisk -l
+      # fdisk -l
 ```
 or
 ```
-# parted -l
+      # parted -l
 ```
 * Show results
   * PVs were created ```# pvs```
@@ -28,12 +28,12 @@ or
   * Original device = 1GB, ssm create command = 400MB, result = 450MB
   * Compare df before and after
 ```
-# ssm resize -s +50%FREE /dev/vg_ssm/lv_ssm
+      # ssm resize -s +50%FREE /dev/vg_ssm/lv_ssm
 ```
 * Show ssm list
 * Show ssm check (fsck)
 ```
-# ssm check /dev/g_ssm/lv_ssm
+      # ssm check /dev/g_ssm/lv_ssm
 ```
 * Cleanup via ssm-cleanup.sh
   * Optional if demo VM is disposable
