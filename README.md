@@ -4,7 +4,7 @@ Quick demo of System Storage Manager (SSM) capabilities
 System Storage Manager (SSM) -- provides a command line interface to manage storage in various technologies.  Allows knowledge and usage of one command syntax for multiple storage backends and filesystem types.  
 
 ### Installation
-**Not installed by default, RHEL 7 or 8 only, no RHEL 6 or lower**
+Not installed by default, RHEL 7 or 8 only, no RHEL 6 or lower
 
 ```
       # yum install -y system-storage-manager
@@ -17,14 +17,14 @@ System Storage Manager (SSM) -- provides a command line interface to manage stor
 
 #### LVM equivalent:
   * Simplifies storage mgmt vs LVM  (1 step vs 5+)
-
-># pvcreate /dev/vdb1
-># pvcreate /dev/vdb2
-># vgcreate vg_ssm /dev/vdb1 /dev/vdb2
-># lvcreate -n lv_ssm -L 400M vg_ssm
-># mkfs -t xfs /dev/vg_ssm/lv_ssm
-># mount -t xfs /dev/vg_ssm/lv_ssm /mnt/ssm-test
-
+```
+# pvcreate /dev/vdb1
+# pvcreate /dev/vdb2
+# vgcreate vg_ssm /dev/vdb1 /dev/vdb2
+# lvcreate -n lv_ssm -L 400M vg_ssm
+# mkfs -t xfs /dev/vg_ssm/lv_ssm
+# mount -t xfs /dev/vg_ssm/lv_ssm /mnt/ssm-test
+```
 
 ### Example: Resize
 
