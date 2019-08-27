@@ -3,16 +3,16 @@ Quick demo of System Storage Manager (SSM) capabilities
 
 System Storage Manager (SSM) -- provides a command line interface to manage storage in various technologies.  Allows knowledge and usage of one command syntax for multiple storage backends and filesystem types.  
 
-
-
 ### Installation
-**Not installed by default, RHEL 7 only, no RHEL 6 or lower**
+Not installed by default, RHEL 7 or 8 only, no RHEL 6 or lower
 
-```# yum install -y system-storage-manager```
+```
+      # yum install -y system-storage-manager
+```
 
 ### Example: Create filesystem
 ```
-# ssm -f create --fstype xfs -p vg_ssm -n lv_ssm -s 400M /dev/vdb1 /dev/vdb2 /mnt/ssm-test
+      # ssm -f create --fstype xfs -p vg_ssm -n lv_ssm -s 400M /dev/vdb1 /dev/vdb2 /mnt/ssm-test
 ```
 
 #### LVM equivalent:
@@ -28,22 +28,26 @@ System Storage Manager (SSM) -- provides a command line interface to manage stor
 
 ### Example: Resize
 
-```# ssm resize -s +50%FREE /dev/vg_ssm/lv_ssm```
+```
+      # ssm resize -s +50%FREE /dev/vg_ssm/lv_ssm
+```
 
 ### Example: Destroy
 ```
-# ssm -f remove /mnt/ssm-test vg_ssm
-# pvremove /dev/vdb1 /dev/vdb2
+      # ssm -f remove /mnt/ssm-test vg_ssm
+      # pvremove /dev/vdb1 /dev/vdb2
 ```
 
 ### Other Examples
 Display information about all detected devices, pools, volumes, and snapshots:
-
-```# ssm list```
+```
+      # ssm list
+```
 
 Check (fsck):
-
-```# ssm check <device>```
+```
+      # ssm check <device>
+```
 
 Syntax:
 ```
@@ -57,5 +61,5 @@ Syntax:
 <mount>
 ```
 
-
-[Reference Documentation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/storage_administration_guide/ch-ssm)
+### References and Resources
+* [Red Hat Documentation - RHEL 7](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/storage_administration_guide/ch-ssm)
