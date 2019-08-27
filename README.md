@@ -4,7 +4,7 @@ Quick demo of System Storage Manager (SSM) capabilities
 System Storage Manager (SSM) -- provides a command line interface to manage storage in various technologies.  Allows knowledge and usage of one command syntax for multiple storage backends and filesystem types.  
 
 ### Installation
-**Not installed by default, RHEL 7 only, no RHEL 6 or lower**
+**Not installed by default, RHEL 7 or 8 only, no RHEL 6 or lower**
 
 ```
       # yum install -y system-storage-manager
@@ -62,4 +62,4 @@ Syntax:
 ```
 
 ### References and Resources
-* [Red Hat Documentation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/storage_administration_guide/ch-ssm)
+* [Red Hat Documentation - RHEL 7](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/storage_administration_guide/ch-ssm)
